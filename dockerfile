@@ -1,3 +1,7 @@
 FROM ubuntu:20.04
+
 ADD API/ API/
-CMD API/manage.py
+
+RUN pip install --no-cache-dir -r requirements.txt
+
+CMD ["python", "sqlite3", "manage.py" ]
